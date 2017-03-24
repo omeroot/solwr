@@ -1,0 +1,28 @@
+{
+  "name": "solwr",
+  "version": "0.1.0",
+  "description": "solr wrapper for nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "keywords": [
+    "solr",
+    "nodejs",
+    "search",
+    "engine",
+    "lucene"
+  ],
+  "author": "demircanomer <demircanomer91@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.3"
+  },
+  "devDependencies": {
+    "apidoc": "^0.13.1",
+    "chai": "^3.5.0",
+    "sinon": "^1.17.5",
+    "superagent": "^2.2.0",
+    "superagent-jsonapify": "^1.4.1"
+  }
+}
