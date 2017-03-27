@@ -67,7 +67,7 @@ users.removeCore(function(err, data){
 });
 ```
 
-#### create core
+#### create document
 ```
 users.create({id: '1', name: 'omer'}, <opts>)
      .exec()
