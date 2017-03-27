@@ -1,87 +1,184 @@
-# Project Title
+# Solwr
 
-One Paragraph of project description goes here
+Solr nodejs wrapper, mongoose inspired
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
-What things you need to install the software and how to install them
+* Solr >= 5
 
+You should install solr server
+* https://www.digitalocean.com/community/tutorials/how-to-install-solr-5-2-1-on-ubuntu-14-04
+* create cores with below commands before running tests
 ```
-Give examples
+solr create_core -c querytest
+solr create_core -c products
 ```
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
 ```
-Give the example
+npm install --save solwr
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
 ```
-Give an example
+npm run test
 ```
 
-### And coding style tests
+## Example
 
-Explain what these tests test and why
+Performing create core, you should create core on server
 
+#### get core
 ```
-Give an example
+solwr.core(<core_name>, <opts>)
+
+// return core
+var users = solwr.core('users');
+
+you try duplicate core throw duplicate error.
+
+opts
+* wt //request and respones type (json, xml)
 ```
 
-## Deployment
+#### remove core
+```
+users.removeCore()
+     .exec()
+     .then(<success_callback>)
+     .then(null, <error_callback>);
 
-Add additional notes about how to deploy this on a live system
 
-## Built With
+alternatively
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+users.removeCore(function(err, data){
+ if(err) handle err
+});
+```
 
-## Contributing
+#### create core
+```
+users.create({id: '1', name: 'omer'}, <opts>)
+     .exec()
+     .then(<success_callback>)
+     .then(null, <error_callback>)
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
+//document array
+users.create([{id: '1', name: 'omer'}, {id: '2', name: 'markakod'}], <opts>)
+     .exec()
+     .then(<success_callback>)
+     .then(null, <error_callback>)
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
-## Authors
+this alternative is usable all of query
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+users.create({id: '1', name: 'omer'}, function(err, data){
+  if(err) handle err
+});
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+opts
+* dataFormat //json, xml
+```
+
+###find
+```
+//get documents by query
+users.find("*:*", <opts>)
+     .exec()
+     .then(function(_users){
+       //use response users
+     })
+     .then(null, function(err){
+       //handle error
+     })
+
+opts
+* format //json, xml
+```
+
+#### only
+```
+//if you want only data, response contains
+users.find("*:*", <opts>)
+     .only()
+     .exec()
+     .then(<success_callback>)
+     .then(null, <error_callback>)
+
+opts
+* format //json, xml
+
+xml response is not parsed, is string
+```
+
+#### sort
+```
+//get documents by query
+users.find("*:*")
+     .sort("id desc")
+     .only()
+     .exec()
+     .then(<success_callback>)
+     .then(null, <error_callback>)
+
+opts
+* format //json, xml
+```
+
+#### limit
+```
+//get documents by query
+users.find("*:*", <opts>)
+     .limit(4)
+     .exec()
+     .then(<success_callback>)
+     .then(null, <error_callback>)
+
+opts
+* format //json, xml
+```
+
+#### skip
+```
+//get documents by query
+users.find("*:*", <opts>)
+     .skip(100)
+     .exec()
+     .then(<success_callback>)
+     .then(null, <error_callback>)
+
+if you want, you can pagination with skip and limit functions
+
+opts
+* format //json, xml
+```
+
+#### remove document
+```
+//get documents by query
+users.remove("id:1", <opts>)
+     .exec()
+     .then(<success_callback>)
+     .then(null, <error_callback>)
+
+opts
+* format //json, xml
+```
+
+### Built With
+
+* [Axios](https://github.com/mzabriskie/axios) - request library
+
+
+### Built With
+heavily inspired by mongoose
+
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+MIT
