@@ -93,7 +93,7 @@ opts
 * dataFormat //json, xml
 ```
 
-###find
+#### find
 ```
 //get documents by query
 users.find("*:*", <opts>)
