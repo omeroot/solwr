@@ -31,6 +31,14 @@ npm run test
 
 Performing create core, you should create core on server
 
+#### config server
+```
+solwr.address( {
+  host: "http://<ip or domain>",
+  port: <port>
+} );
+```
+
 #### get core
 ```
 solwr.core(<core_name>, <opts>)
