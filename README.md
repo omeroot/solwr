@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.com/omeroot/solwr.svg?branch=master)](https://travis-ci.com/omeroot/solwr)
+[![Build Status](https://travis-ci.com/omeroot/solwr.svg?token=HwAzzp4SEEHKLQg8sfv3&branch=master)](https://travis-ci.com/omeroot/solwr)
+[![npm version](https://badge.fury.io/js/solwr.svg)](https://badge.fury.io/js/solwr)
 
 # Solwr
 
