@@ -26,4 +26,4 @@ before_script:
   - sudo bash ./install_solr_service.sh solr-5.5.4.tgz
   - sudo su - solr create_core -c '/opt/solr/bin/solr create_core -c querytest'
   - sudo su - solr create_core -c '/opt/solr/bin/solr create_core -c products'
-script: ./run_build.sh
+script: npm test
