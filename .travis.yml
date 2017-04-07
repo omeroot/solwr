@@ -2,10 +2,10 @@ language:
 - node_js
 node_js:
 - '5'
-- '6'
-- '7'
 install:
 - npm install
+notifications:
+  email: false
 branches:
   only:
   - dev
@@ -18,5 +18,13 @@ deploy:
   on:
     tags: true
     branch: master
+before_install:
+  - sudo apt-get install tar -y
 before_script:
+  - pwd
   - npm install -g mocha
+  - wget http://apache.mirror1.spango.com/lucene/solr/5.5.4/solr-5.5.4.tgz
+  - tar xzf solr-5.5.4.tgz solr-5.5.4/bin/install_solr_service.sh --strip-components=2
+  - sudo bash ./install_solr_service.sh solr-5.5.4.tgz
+  - sudo su - solr create_core -c '/opt/solr/bin/solr create_core -c querytest'
+  - sudo su - solr create_core -c '/opt/solr/bin/solr create_core -c products'
