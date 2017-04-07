@@ -190,5 +190,4 @@ heavily inspired by mongoose
 
 
 ## License
-
 MIT
