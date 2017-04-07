@@ -21,6 +21,7 @@ deploy:
   on:
     tags: true
     branch: master
+    repo: omeroot/solwr
 before_install:
   - sudo apt-get install tar -y
 before_script:
