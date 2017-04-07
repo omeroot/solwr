@@ -6,10 +6,6 @@ install:
 - npm install
 notifications:
   email: false
-branches:
-  only:
-  - dev
-  - master
 env:
 - NODE_ENV=dev
 deploy:
