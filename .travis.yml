@@ -9,6 +9,7 @@ notifications:
 branches:
   only:
   - dev
+  - master
 env:
 - NODE_ENV=dev
 deploy:
