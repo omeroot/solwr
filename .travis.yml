@@ -21,9 +21,10 @@ before_install:
 before_script:
   - npm install -g mocha
   - cd ~
-  - wget http://apache.mirror1.spango.com/lucene/solr/5.2.1/solr-5.2.1.tgz
-  - tar xzf solr-5.2.1.tgz solr-5.2.1/bin/install_solr_service.sh --strip-components=2
-  - sudo bash ./install_solr_service.sh solr-5.2.1.tgz
+  - wget http://apache.mirror1.spango.com/lucene/solr/5.5.4/solr-5.5.4.tgz
+  - tar xzf solr-5.5.4.tgz solr-5.5.4/bin/install_solr_service.sh --strip-components=2
+  - sudo bash ./install_solr_service.sh solr-5.5.4.tgz
   - su -u solr
   - solr create_core -c querytest
   - solr create_core -c products
+  - sudo su
