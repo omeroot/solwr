@@ -1,4 +1,5 @@
 [![npm version](https://badge.fury.io/js/solwr.svg)](https://badge.fury.io/js/solwr)
+
 # Solwr
 
 Solr nodejs wrapper, mongoose inspired
