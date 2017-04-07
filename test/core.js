@@ -7,7 +7,7 @@ var expect = chai.expect;
 
 describe( "Core", function () {
   solwr.address( {
-    host: "http://34.198.216.238",
+    host: "http://127.0.0.1",
     port: 8983
   } );
 
