@@ -13,16 +13,16 @@ deploy:
   skip_cleanup: true
   email: demircanomer91@gmail.com
   api_key:
-    secure: YTg55FdtHHNwbGmrYGcGY3stUAXAFhIgQ919ImcF7v6fAGzjUE7IE6R24iaiCR9SVylRt390OlTCwdiuz+PFqv7FczU/TjnxcrSTTB8T+LMOMFNcycYc1dQv4uFJPtjJ6BAKulk089RLfQTO7hrq2i4/ywjKZBOlNpqtbBwSe+I8JvUBXOAPGMwdOjKl6EyPxZNpQXlcLWrRlR7F4nD7z7nQ9rEhIwu0k/p9WdVv5OKN2iVcvIRNdRRyBwagWuvwdr2sfkgU2oDeld5LyuDxjs9evgzom9aw49fyZwtjcxrC45msfvF5ueO0Rd1cmCNTD/o3hDhQ7/rk7KeVUmChKi0231CIb7ROHsWvwPtbMEInWaDa1A3Nu93aS7GirNGVYPIxZnIRffde7HYUomaSEzd2ilEUTAeQvxyYqcRnu5B9bjHGmQgA1PJzobPm7WwKOoUTYm7D7YIMMN3ccnGEVYIMxBMWk3KmtbCmWglublBDbozMuWJsHo4En5VxASTZUOe4y/bj7N8EWyTfeKjaH+btMaUuVJ8wkhaNc/V7q+sgtE2Xcmj3p102nvhrpiGu4ynDWROLoXpaoWjG552z2JoXHjYiPLyVvWhhmrMGkhRePFsC1rNzkx9xbtYVWCJs+06XRsAvqTYCQXMa3h6OZuMpLq8igpRc0O4b/fuq7qA=
+    secure: NVIdRRfkdmVwS7Gk22qpGOOimY28QnRHBVDbFmX9KnzeL8kP6AXM4HCV5FG9zjzPZw2mE8TfZ0rrYWXtSkyjkDX10l42yI+tH8nfXtYfZdw6kmVbLUg/DDHgByvF/FoIJAfQHzvjvh/IhJdEfLr5cQb0cxQEu4tta2xvra/alszBN3+BJQxauYsGyevkZzhavDfDXKT3pJ5nyhE+1WeT3jJrH1RavB6o3M0YR5tdvf77H78M2C58W+RFH0WMk+nJbvC2k3eW8GiZof0MzuAS6qjiFBH9QPd4W5/Y0SaVWX9Al216mfR4HNxe4JFJ1wLtSOWT9hAwNoIaObcOLl2gn55ih1Gpl8K3QmVaWBkzNfH5lFKO/lhWSJHOdEztGJgqzH0owAO1c8L8rU+mUO20FmZwi5tUepRVju1Pou2iTDp8wy+Tq4SfjZQ5aW5J9RaOcQvPSZ1x6nj/j78RA5zGcweeQAw3tgwTLEQrDU+Hf9K+s61L3qx6aUA90WMv4GbEEb865SNNqbb+NbLNz2tY4+dD3BdzCkwLG0mVqjjM7CijLbrZPDxghBUnDx1CDwxI1lpLkSFU4YCXpHi/nS+mbrotenxfTNndauusAXOhmukbNu5AefOgcz1CRv80xKJu0poAof1RRYD1tTvbZ/zSeifOnheqvgJ9fGDNJA47FEE=
   on:
     tags: true
     all_branches: true
 before_install:
-  - sudo apt-get install tar -y
+- sudo apt-get install tar -y
 before_script:
-  - npm install -g mocha
-  - wget http://apache.mirror1.spango.com/lucene/solr/5.5.4/solr-5.5.4.tgz
-  - tar xzf solr-5.5.4.tgz solr-5.5.4/bin/install_solr_service.sh --strip-components=2
-  - sudo bash ./install_solr_service.sh solr-5.5.4.tgz
-  - sudo su - solr create_core -c '/opt/solr/bin/solr create_core -c querytest'
-  - sudo su - solr create_core -c '/opt/solr/bin/solr create_core -c products'
+- npm install -g mocha
+- wget http://apache.mirror1.spango.com/lucene/solr/5.5.4/solr-5.5.4.tgz
+- tar xzf solr-5.5.4.tgz solr-5.5.4/bin/install_solr_service.sh --strip-components=2
+- sudo bash ./install_solr_service.sh solr-5.5.4.tgz
+- sudo su - solr create_core -c '/opt/solr/bin/solr create_core -c querytest'
+- sudo su - solr create_core -c '/opt/solr/bin/solr create_core -c products'
