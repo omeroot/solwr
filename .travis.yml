@@ -20,3 +20,5 @@ deploy:
     branch: master
 before_script:
   - npm install -g mocha
+  - solr create_core -c querytest
+  - solr create_core -c products
