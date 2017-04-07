@@ -9,10 +9,12 @@ notifications:
 branches:
   only:
   - dev
+  - master
 env:
 - NODE_ENV=dev
 deploy:
   provider: npm
+  skip_cleanup: true
   api_key:
     secure: YTg55FdtHHNwbGmrYGcGY3stUAXAFhIgQ919ImcF7v6fAGzjUE7IE6R24iaiCR9SVylRt390OlTCwdiuz+PFqv7FczU/TjnxcrSTTB8T+LMOMFNcycYc1dQv4uFJPtjJ6BAKulk089RLfQTO7hrq2i4/ywjKZBOlNpqtbBwSe+I8JvUBXOAPGMwdOjKl6EyPxZNpQXlcLWrRlR7F4nD7z7nQ9rEhIwu0k/p9WdVv5OKN2iVcvIRNdRRyBwagWuvwdr2sfkgU2oDeld5LyuDxjs9evgzom9aw49fyZwtjcxrC45msfvF5ueO0Rd1cmCNTD/o3hDhQ7/rk7KeVUmChKi0231CIb7ROHsWvwPtbMEInWaDa1A3Nu93aS7GirNGVYPIxZnIRffde7HYUomaSEzd2ilEUTAeQvxyYqcRnu5B9bjHGmQgA1PJzobPm7WwKOoUTYm7D7YIMMN3ccnGEVYIMxBMWk3KmtbCmWglublBDbozMuWJsHo4En5VxASTZUOe4y/bj7N8EWyTfeKjaH+btMaUuVJ8wkhaNc/V7q+sgtE2Xcmj3p102nvhrpiGu4ynDWROLoXpaoWjG552z2JoXHjYiPLyVvWhhmrMGkhRePFsC1rNzkx9xbtYVWCJs+06XRsAvqTYCQXMa3h6OZuMpLq8igpRc0O4b/fuq7qA=
   on:
