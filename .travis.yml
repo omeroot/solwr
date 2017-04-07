@@ -24,7 +24,7 @@ before_script:
   - wget http://apache.mirror1.spango.com/lucene/solr/5.5.4/solr-5.5.4.tgz
   - tar xzf solr-5.5.4.tgz solr-5.5.4/bin/install_solr_service.sh --strip-components=2
   - sudo bash ./install_solr_service.sh solr-5.5.4.tgz
-  - su -u solr
+  - su - solr
   - solr create_core -c querytest
   - solr create_core -c products
   - sudo su
