@@ -21,7 +21,6 @@ deploy:
 before_install:
   - sudo apt-get install tar -y
 before_script:
-  - pwd
   - npm install -g mocha
   - wget http://apache.mirror1.spango.com/lucene/solr/5.5.4/solr-5.5.4.tgz
   - tar xzf solr-5.5.4.tgz solr-5.5.4/bin/install_solr_service.sh --strip-components=2
