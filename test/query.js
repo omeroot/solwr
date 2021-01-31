@@ -17,7 +17,6 @@ describe( "Query", function () {
       queryTest.create( { id: '4', name: 'omer' } )
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( err ) {
@@ -29,7 +28,6 @@ describe( "Query", function () {
       queryTest.create( "<add><doc><field name='name'>Omer</field></doc></add>" )
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( err ) {
@@ -41,7 +39,6 @@ describe( "Query", function () {
       queryTest.create( [ { id: '5', name: 'markakod' }, { id: 21, name: 'kadikoy' } ] )
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( err ) {
@@ -53,7 +50,6 @@ describe( "Query", function () {
       queryTest.create( "<add><doc><field name='name'>XXX</field></doc><doc><field name='name'>YYY</field></doc></add>" )
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( err ) {
@@ -65,7 +61,6 @@ describe( "Query", function () {
       queryTest.find( "*:*" )
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( error ) {
@@ -78,7 +73,6 @@ describe( "Query", function () {
         .only()
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( error ) {
@@ -90,7 +84,6 @@ describe( "Query", function () {
       queryTest.find( "*:*", { format: 'xml' } )
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( error ) {
@@ -104,7 +97,6 @@ describe( "Query", function () {
         .only()
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( error ) {
@@ -118,7 +110,6 @@ describe( "Query", function () {
         .only()
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( error ) {
@@ -132,7 +123,6 @@ describe( "Query", function () {
         .only()
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( error ) {
@@ -144,7 +134,6 @@ describe( "Query", function () {
       queryTest.remove( "name:Omer" )
         .exec()
         .then( function ( result ) {
-          console.log( result );
           done();
         } )
         .then( null, function ( error ) {

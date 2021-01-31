@@ -108,7 +108,6 @@ Query.prototype.remove = function ( callback ) {
 
 Query.prototype.exec = function () {
   var _this = this;
-  console.log( "[REQUEST] " + this.$url );
 
   return new Promise( function ( approve, reject ) {
     if ( _this.__callback__ ) {
