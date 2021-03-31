@@ -1,8 +1,8 @@
 [![npm version](https://badge.fury.io/js/solwr.svg)](https://badge.fury.io/js/solwr)
 
-# Solwr
+# Solwr(-fork)
 
-Solr nodejs wrapper, mongoose inspired
+Solr nodejs wrapper, mongoose inspired (with a simple log removal)
 
 ## Getting Started
 ### Prerequisites
@@ -20,7 +20,7 @@ solr create_core -c products
 ### Installing
 
 ```
-npm install --save solwr
+npm install --save solwr-fork
 ```
 
 ## Running the tests
